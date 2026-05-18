@@ -18,7 +18,7 @@ class NoteRepositories {
       values: [id, title, body, tags, createdAt, updatedAt],
     };
 
-    const result = this.pool.query(query);
+    const result = await this.pool.query(query);
 
     return result.rows[0];
   }
@@ -52,7 +52,7 @@ class NoteRepositories {
     return result.rows[0];
   }
 
-  async deleteNoteById(id) {
+  async deleteNote(id) {
     const query = {
       text: 'DELETE FROM notes WHERE id = $1 RETURNING id',
       values: [id],

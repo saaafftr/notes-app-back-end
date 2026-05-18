@@ -37,7 +37,7 @@ export const editNoteById = async (req, res, next) => {
   const { id } = req.params;
   const { title, body, tags } = req.validated;
 
-  const note = await NoteRepositories.editNote({
+  const note = await NoteRepositories.editNoteById({
     id,
     title,
     body,
