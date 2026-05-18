@@ -1,7 +1,7 @@
 import express from 'express';
 import {
   createNote,
-  deleteNoteById,
+  deleteNote,
   editNoteById,
   getNotes,
   getNoteById,
@@ -17,6 +17,6 @@ router.post('/notes', validate(notePayloadSchema), createNote);
 router.get('/notes', validateQuery(noteQuerySchema), getNotes);
 router.get('/notes/:id', getNoteById);
 router.put('/notes/:id', validate(notePayloadSchema), editNoteById);
-router.delete('/notes/:id', deleteNoteById);
+router.delete('/notes/:id', deleteNote);
 
 export default router;
